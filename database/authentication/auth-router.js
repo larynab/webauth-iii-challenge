@@ -49,7 +49,8 @@ router.post("/login", (req, res) => {
 function generateToken(user) {
 const payload = {
   subject: user.id,
-  username: user.username
+  username: user.username,
+  department: ['science, engineering']
 };
 //import secret
 // const secret = 'sword of destiny';
