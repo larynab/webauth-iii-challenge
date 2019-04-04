@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
         res.status(401).json({ message: "Invalid Credentials" });
       } else {
         //token valid
-        //FAKE EXAMPLE DEMO TOKEN
+        //MAGIC KEY
         req.decodedJwt = decodedToken;
         //USE CLIENT TOKEN AS AUTHORIZATION IN HEADER
         //make sure no quotes
