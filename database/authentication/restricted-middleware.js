@@ -1,9 +1,22 @@
 const bcrypt = require("bcryptjs");
+//JSON web token
+const jwt = require('jsonwebtoken');
+//import secret
+const secret = require('./secrets').jwtSecret;
 
 const Users = require("../users/users-model.js");
 
 module.exports = (req, res, next) => {
-  const { username, password } = req.headers;
+  //username-password not needed anymore, because of token
+  // const { username, password } = req.headers;
+  const token = req.headers.authorization;
+  if(token) {
+    //VERIFY token
+    jwt.verify(token, secret,)
+  } else {
+    res.status(401).json({ message: "access denied" });
+  }
+
 
   if (username && password) {
     Users.findBy({ username })
