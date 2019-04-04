@@ -19,7 +19,8 @@ module.exports = (req, res, next) => {
       } else {
         //token valid
         //req.decodedJwt = decodedToken;
-
+        //USE CLIENT TOKEN AS AUTHORIZATION IN HEADER
+        //make sure no quotes
         next();
       }
     });
